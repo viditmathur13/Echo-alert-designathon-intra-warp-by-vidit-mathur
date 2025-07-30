@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+
+</head>
+<body >
+  <header >
+    <a href="index.html"><img src="Echo Alert Final Logo.png" alt="Logo" style="width: 100px; height: 100px;" /></a>
+
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="problem.html">Problem</a>
+    <a href="product.html">Product</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <div class="interactive-box">
+      <h2>ECHO ALERT</h2><br>
+      <h3>Your Personal Safety Companion</h3><br><br>
+      <p><span id="typing-text"></span><span id="cursor">|</span></p>
+    </div>
+  </main>
+
+  <script>
+    const text = "Be Seen. Be Heard. Be Safe.";
+    const speed = 70;
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById("typing-text").textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    setInterval(() => {
+      const cursor = document.getElementById("cursor");
+      cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
+    }, 500);
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
